@@ -1,0 +1,35 @@
+input -6 5000 1.633 7.505 0.0105406639324 1.636 7.516 0.0105406639324 180. 0.
+scheff 0.0
+exitffl 1.882
+vfac 1.0
+end
+
+NumberOfCouplingGap 0
+PosCouplingGap 1.0032439
+CouplingGapWidth 0.1e-3
+SemiEllipsoidLength 1e-3
+SemiEllipsoidHeight 0.25e-3
+PosCouplingGap 2.0027699
+CouplingGapWidth 2.2e-3
+SemiEllipsoidLength 2e-3
+SemiEllipsoidHeight 0.75e-3
+PosCouplingGap 2.9995766
+CouplingGapWidth 0.1e-3
+SemiEllipsoidLength 1.0e-3
+SemiEllipsoidHeight 0.25e-3
+PosCouplingGap 3.9968145
+CouplingGapWidth 2.2e-3
+SemiEllipsoidLength 2e-3
+SemiEllipsoidHeight 0.75e-3
+PosCouplingGap 4.9935825
+CouplingGapWidth 0.1e-3
+SemiEllipsoidLength 1e-3
+SemiEllipsoidHeight 0.25e-3
+PosCouplingGap 5.9945624
+CouplingGapWidth 2.2e-3
+SemiEllipsoidLength 2e-3
+SemiEllipsoidHeight 0.75e-3
+PosCouplingGap 6.9986286
+CouplingGapWidth 0.1e-3
+SemiEllipsoidLength 1e-3
+SemiEllipsoidHeight 0.25e-3

@@ -1,0 +1,11 @@
+# -I/opt/local/include/ : for the gsl, gnu scienfic library include files
+# -L/opt/local/lib/     : for the gsl, gnu scienfic library lib files
+g++ demirci.C -o demirci -I/opt/local/include/ -L/opt/local/lib/ -lgsl -lm > demirci_compil.log
+
+if [ $? -eq 0 ] ; then
+ echo compilation OK
+ echo to run, type ./demirci
+else 
+ echo compilation fails, check the logfile
+fi
+

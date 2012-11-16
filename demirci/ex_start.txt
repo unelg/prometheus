@@ -1,0 +1,49 @@
+FQFINISH 0.3        //  set the z location for distrib.dst, RFQ length is the default
+theSpecialLostFlag 0 // obsolete
+theAcceleratedFlag 1 // if 1, only accelerated particles are in the distrib.dst, if 0, it is all particles
+theEquivalentBeamFlag 0 // obsolete
+theNewPotFlag 0 // obsolete
+theLossesCriteriaFlag 0 //  if 1, a square (like old parteqm) is used to estimate beam losses, if 0 (default) it is electrode shape
+theSavingRunFlag 0 // obsolete
+theRunCartoonFlag 0 // obsolete
+theGeometryFileFlag 0 0
+;theGeometryFileFlag type N dz
+; if type 0 => default, 50 steps per cell
+; if type 1 => read geometry file, N is the complete path to the file without blank
+; if type 2 => if (N==0) then the step size is dz
+;           => if (N!=0) then N steps by cell
+
+theRandomFlag 0 // allowsto set fix the seed for particle generation
+WallAperture 0.008 // plate aperture radius (m)
+SemiWidthWall 0.0025 // in m
+diaphragme 1. // allows to scrap at input, the collimator radius is given in meter
+theDirectionFlag 1 //obsolete
+LBECompensation 1.0 // obsolete
+theStartingModulation -1 // allows to change the starting modulation convention, it is equivalent to turn the RFQ by 90 degrees
+theRhoR0RatioInRMS 0 // allows  to keep constant the ratio between Rho and R0 in the RMS if 1
+GapRMS 0.0091771 // in meter
+GapFFS 0.0080991 // in meter
+thespacechargeperiod 1 // refresh rate of space charge computation, for instance, 2 means every 2 steps
+theextfieldperiod 1 // the same for external fields computations
+theTrancellFlag 1 // the last cell is a transition cell if 1
+theSpeciesFlag 0 // allows to inject several particle type (see doc)
+-------------------------------------------------
+-               distribution                    -
+
+theDistribution k  none // if label=k Toutatis generate a 4D WB, if label=f, "none" should be the complete path to an input dst file
+theSpeciesFlag n // permit to inject several beams with different q/A if n >0, a sequence of n lines with a block which describe each q/A with its current fraction, reduced Mass, charge, a boolean to indicate to Toutatis that it is the reference q/A. Example: to transport a reference beam of protons with 80 mA and 20 mA of H2+ and 5 mA of H3+, you have to:
+
+theSpeciesFlag 3
+0.998 1.007 1 1
+0.001 2.014 1 0
+0.001 3.022 1 0
+
+the total current is declared with the Scheff command (see below), the total number of macroparticles is set with the input command (see below) and the kinetic energy is the same for all (see linac command below). The sum of the current fraction must be equal to 1. In case the command  'theDistribution' is set to 'f' for each line n in the block, the code will search a file distribn.dst (here, distrib1.dst, distrib2.dst and distrib3.dst). If the  command 'theDistribution' is set to 'k', a 4D water bag is generated with the same twiss parameters. In case, you use .dst files, take care about the compatibility of the respective declarations for the  mass, number of particles and current.
+-------------------------------------------------
+
+NbRMSCell 6 // number of cells for the RMS
+theBreakOutAngle 1. // in degrees
+theAccuracyFlag 0 // see documentation
+NStep 8 // number of time step per cell
+End
+
